@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Stopla || Home</title>
+    <title>Products | Stopla</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,17 +19,17 @@
 
 
     <div class="pg__product">
-        <div class="container" style="padding: 0;">
-            <nav id="nav" class="pg__contact">
-                <!-- <img src="logo.png" alt="STOPLA"> -->
-                <h2>STOPLA</h2>
+        <div class="nav-container" id="navbar" style="padding: 0;">
+            <nav id="nav">
+                <a href="index.html" class="logoName">STOPLA</a>
                 <ul class="list" id="list">
-                    <li style="color: black"><a href="index.html">Home</a></li>
-                    <li style="color: black"><a href="about.html">About</a></li>
-                    <li style="color: black"><a href="products.html">But /Sell</a></li>
-                    <li style="color: black"><a href="index.html#blog">Blog</a></li>
-                    <li style="color: black"><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html" style="color: #c9d935 ; font-weight: 900;">Buy / Sell</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <a class="btn btn--rev" href="#">Contac Us</a>
                 <button class="menu" id="menu"
                     onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
                     aria-label="Main Menu">
@@ -42,30 +42,59 @@
                     </svg>
                 </button>
             </nav>
-            <!-- <div class="pg__product__info">
-                <h2 class="heading">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, unde.
-                </h2>
-                <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt aut doloremque dolor
-                    minima pariatur vero, fuga placeat ullam repudiandae dolore dolorum quis earum provident ratione
-                    esse beatae non accusamus odio.</p>
-                </div> -->
         </div>
         <hr>
 
         <div class="container pg__product__links">
             <div class="pg__product__links__customer">
-                <p class="title">Customers</p>
-                <p class="heading">Lorem ipsum dolor sit amet consectetur.</p>
-                <a class="btn" href="#">Contact now</a>
+                <div class="bg bg--customer">
+                    <div class="center">
+                        <p class="title">Customers</p>
+                        <p class="heading">Lorem ipsum dolor sit amet consectetur.</p>
+                        <a class="btn" href="#">Contact now</a>
+                    </div>
+                </div>
             </div>
             <div class="pg__product__links__farmer">
-                <p class="title">Farmers</p>
-                <p class="heading">Lorem ipsum dolor sit amet consectetur.</p>
-                <a class="btn" href="#">Contact now</a>
+                <div class="bg bg--farmer">
+                    <div class="center">
+                        <p class="title">Farmers</p>
+                        <p class="heading">Lorem ipsum dolor sit amet consectetur.</p>
+                        <a class="btn" href="#">Contact now</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
     </div>
+
+    <hr>
+
+    <footer>
+        <div class="container footer">
+            <div class="footer__logo" data-aos="fade-up" data-aos-duration="900">
+                <h2 class="text text--big">STOPLA</h2>
+                <p class="text">Copyright 2020 &copy; SPATLA</p>
+            </div>
+            <div class="footer__social" data-aos="fade-up" data-aos-duration="1000">
+                <p class="text">Follow us on</p>
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-twitter"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+            <div class="footer__links" data-aos="fade-up" data-aos-duration="1100">
+                <p class="text">Quick Links</p>
+                <ul>
+                    <li>Home</li>
+                    <li>Buy</li>
+                    <li>Sell</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 
 
 

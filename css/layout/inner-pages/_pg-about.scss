@@ -1,7 +1,11 @@
 .pg__about {
   // nav section styles
   nav {
-    h2 {
+    .list {
+      color: $black;
+    }
+
+    .logoName {
       color: $black;
     }
     .line {

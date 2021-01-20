@@ -1,10 +1,15 @@
 .pg__contact {
-  h2 {
-    color: $black;
-  }
+  nav {
+    .list {
+      color: $black;
+    }
 
-  .line {
-    stroke: $black !important;
+    .logoName {
+      color: $black;
+    }
+    .line {
+      stroke: $black !important;
+    }
   }
 
   &__info {

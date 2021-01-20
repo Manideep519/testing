@@ -1,16 +1,63 @@
 .header {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url(../assets/images/header_bg-1.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/images/header_bg-1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 
-h2 {
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  nav {
+    background-color: $white;
+    height: 60px;
+
+    .btn {
+      padding: 10px 20px;
+    }
+
+    .list {
+      color: $black;
+    }
+
+    .logoName {
+      color: $black;
+    }
+
+    .menu {
+      .line {
+        stroke: $black;
+      }
+    }
+  }
+}
+
+.nav-container.sticky {
+  background-color: #fff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 10px 20px;
+  width: 100%;
+  hr {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    @media only screen and (min-width: 768px) {
+      display: initial;
+      visibility: visible;
+      opacity: 0;
+    }
+  }
+}
+
+.sticky + .container {
+  padding-top: 102px;
+}
+
+.logoName {
   font-size: 30px;
 }
 
@@ -22,7 +69,7 @@ nav .list.active {
 }
 
 nav.active {
-  h2 {
+  .logoName {
     color: $black;
     position: relative;
     z-index: 10;
@@ -43,11 +90,16 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 24px;
+  transition: all 0.3s ease-out;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
   a.btn {
     display: none;
     visibility: hidden;
   }
-  h2 {
+  .logoName {
     color: $white;
   }
   .list {
@@ -68,6 +120,7 @@ nav {
     color: $black;
     list-style-type: none;
     transition: all 0.4s ease-in;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     .drop-down {
       position: relative;
     }
@@ -112,7 +165,7 @@ nav {
       }
     }
   }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     height: 100px;
     justify-content: space-between;
     align-items: center;
@@ -124,10 +177,6 @@ nav {
     transform: translate(0, 0);
     background: transparent;
     color: $white;
-    a.btn {
-      display: initial;
-      visibility: visible;
-    }
     h2 {
       color: $white;
       margin-left: 20px;
@@ -151,12 +200,16 @@ nav {
       padding-top: 0;
       padding-bottom: 0;
       padding-top: 0;
+      box-shadow: none;
       li {
         font-size: initial;
-        font-weight: 400;
+        font-weight: 500;
+        letter-spacing: 1px;
         padding: 0 18px;
         align-self: auto;
         border: none;
+        font-size: 14px;
+        text-transform: uppercase;
         .drop-down-menu {
           position: absolute;
           top: 62px;
@@ -174,13 +227,20 @@ nav {
       }
     }
   }
+
+  @include respond(md) {
+    a.btn {
+      display: initial;
+      visibility: visible;
+    }
+  }
 }
 
 // Hero text center
 
 .hero--text {
-  padding-top: 180px;
-  padding-bottom: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -209,8 +269,7 @@ nav {
   fill: none;
   stroke: $white;
   stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .line1 {

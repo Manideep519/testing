@@ -1,34 +1,16 @@
 .pg__product {
-  .line {
-    stroke: $black !important;
+  nav {
+    .list {
+      color: $black;
+    }
+
+    .logoName {
+      color: $black;
+    }
+    .line {
+      stroke: $black !important;
+    }
   }
-
-  // &__info {
-  //   position: absolute;
-  //   @include removePosition;
-  //   padding: 100px 0;
-  //   width: 100%;
-  //   text-align: center;
-
-  //   @include respond(md) {
-  //     @include center;
-  //   }
-
-  //   .heading {
-  //     font-size: 40px;
-  //     margin-bottom: 20px;
-  //   }
-
-  //   .text {
-  //     width: 100%;
-  //     margin: auto;
-  //     text-align: center;
-
-  //     @include respond(md) {
-  //       width: 80&;
-  //     }
-  //   }
-  // }
 
   &__links {
     display: flex;
@@ -43,37 +25,52 @@
 
     a.btn {
       margin: 0 auto;
-      background-color: $white;
-      color: #27ae60;
+      background-color: #27ae60;
+      color: $white;
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
     }
 
     &__customer,
     &__farmer {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      display: flex;
-      padding: 30px;
-      flex-direction: column;
-      justify-content: center;
-    }
+      height: 500px;
+      width: 100%;
+      overflow: hidden;
+      &:hover {
+        & .bg--customer,
+        .bg--farmer {
+          transform: scale(1.05);
+        }
+      }
 
-    &__customer {
-      background-image: linear-gradient(
-          to left,
-          rgba($color: #f39c12, $alpha: 0.7)
-        ),
-        url(../assets/images/products-pg/customer.jpg);
-    }
-    &__farmer {
-      background-image: linear-gradient(
-          to left,
-          rgba($color: #27ae60, $alpha: 0.7)
-        ),
-        url(../assets/images/products-pg/farmer.jpg);
+      & .bg {
+        transition: all 0.5s;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        &--customer {
+          background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../../assets/images/products-pg/customer.jpg);
+        }
+        &--farmer {
+          background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../../assets/images/products-pg/farmer.jpg);
+        }
+
+        & .center {
+          @include center;
+          top: 70%;
+          width: 100%;
+        }
+      }
     }
   }
 }

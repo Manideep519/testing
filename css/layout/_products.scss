@@ -1,70 +1,6 @@
 .products {
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 100px;
-
-  // &__flex {
-  //   display: flex;
-  //   padding: 50px 0;
-  //   flex-direction: column;
-  //   padding: 0 2px;
-  //   align-items: flex-start;
-  //   @include respond(sm) {
-  //     align-items: center;
-  //     flex-direction: row;
-  //   }
-
-  //   & > div {
-  //     flex-basis: 100%;
-  //     flex: 1 1 0px;
-  //   }
-
-  //   &__buy {
-  //     max-width: 100%;
-  //     margin: 0;
-
-  //     @include respond(sm) {
-  //       margin-right: 50px;
-  //       max-width: 40%;
-  //     }
-
-  //     a {
-  //       & > div {
-  //         padding: 40px 30px;
-  //         border-radius: 20px;
-  //         margin: 50px 0;
-  //         transition: all 0.3s ease;
-
-  //         &:hover {
-  //           transform: translateY(-2px);
-  //           box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-  //             rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   &__img {
-  //     position: relative;
-  //     img {
-  //       width: 600px;
-  //       max-width: 100%;
-  //       box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  //     }
-  //     .img--1 {
-  //     }
-  //     .img--2 {
-  //       position: absolute;
-  //       left: 20%;
-  //       width: 60%;
-  //       top: 50%;
-
-  //       @include respond(sm) {
-  //         top: 25%;
-  //         width: 80%;
-  //       }
-  //     }
-  //   }
-  // }
 
   &__info {
     display: flex;
@@ -88,31 +24,45 @@
     }
 
     &__card {
-      // text-align: center;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      padding: 50px;
+      background-color: mediumseagreen;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 20px 30px;
       width: 100%;
-      margin: 0 30px;
       border-radius: 4px;
+
+      &:not(:last-child) {
+        margin: 20px 0;
+
+        @include respond(sm) {
+          margin: 0;
+          margin-right: 30px;
+        }
+      }
+
       svg {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
       }
       .text {
         font-size: 30px;
         margin-bottom: 10px;
+        font-weight: 600;
+        text-decoration: underline;
+        color: white;
       }
 
       ul {
+        color: white;
         li {
           font-size: 18px;
+          font-weight: 700;
           font-weight: 500;
           padding: 10px 0;
 
           ion-icon {
             position: relative;
-            top: 4px;
+            top: 2px;
+            font-size: 16px;
             margin-right: 5px;
           }
         }
