@@ -14,62 +14,57 @@
 
   &__links {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -20px;
+    padding: 50px 0;
 
-    text-align: center;
-
-    .heading,
-    .title {
-      color: $white;
-      font-family: "Red Hat Display", sans-serif;
+    & > div {
+      flex: 1 1 0;
+      margin: 20px;
+      min-height: 500px;
     }
 
-    a.btn {
-      margin: 0 auto;
-      background-color: #27ae60;
-      color: $white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+    &__farmer,
+    &__customer {
+      position: relative;
+      border-radius: 6px;
+      padding: 20px;
 
-      &:hover,
-      &:focus {
-        color: $white;
+      .title {
+        color: $black;
+        font-size: 22px;
+      }
+
+      a.btn {
+        border: 2px solid black;
+        background-color: inherit;
+        color: #000;
       }
     }
 
-    &__customer,
+    .bg--customer,
+    .bg--farmer {
+      height: 300px;
+      width: 300px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top left;
+    }
+
+    &__customer {
+      background-color: #ff9f1a;
+
+      & .bg--customer {
+        background-image: url(../assets/svg/cart.svg);
+      }
+    }
+
     &__farmer {
-      height: 500px;
-      width: 100%;
-      overflow: hidden;
-      &:hover {
-        & .bg--customer,
-        .bg--farmer {
-          transform: scale(1.05);
-        }
-      }
+      background-color: mediumseagreen;
 
-      & .bg {
-        transition: all 0.5s;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 100%;
-        position: relative;
-
-        &--customer {
-          background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../../assets/images/products-pg/customer.jpg);
-        }
-        &--farmer {
-          background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../../assets/images/products-pg/farmer.jpg);
-        }
-
-        & .center {
-          @include center;
-          top: 70%;
-          width: 100%;
-        }
+      & .bg--farmer {
+        background-image: url(../assets/svg/farmer-bg.svg);
       }
     }
   }

@@ -1936,69 +1936,62 @@ nav .list li .drop-down-menu li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -20px;
+  padding: 50px 0;
 }
 
-.pg__product__links .heading,
-.pg__product__links .title {
-  color: #ffffff;
-  font-family: "Red Hat Display", sans-serif;
+.pg__product__links > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  margin: 20px;
+  min-height: 500px;
 }
 
-.pg__product__links a.btn {
-  margin: 0 auto;
-  background-color: #27ae60;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.pg__product__links a.btn:hover, .pg__product__links a.btn:focus {
-  color: #ffffff;
-}
-
-.pg__product__links__customer, .pg__product__links__farmer {
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.pg__product__links__customer:hover .bg--customer,
-.pg__product__links__customer:hover .bg--farmer, .pg__product__links__farmer:hover .bg--customer,
-.pg__product__links__farmer:hover .bg--farmer {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.pg__product__links__customer .bg, .pg__product__links__farmer .bg {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
+.pg__product__links__farmer, .pg__product__links__customer {
   position: relative;
+  border-radius: 6px;
+  padding: 20px;
 }
 
-.pg__product__links__customer .bg--customer, .pg__product__links__farmer .bg--customer {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../../assets/images/products-pg/customer.jpg);
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../../assets/images/products-pg/customer.jpg);
+.pg__product__links__farmer .title, .pg__product__links__customer .title {
+  color: #122423;
+  font-size: 22px;
 }
 
-.pg__product__links__customer .bg--farmer, .pg__product__links__farmer .bg--farmer {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8))), url(../../../assets/images/products-pg/farmer.jpg);
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../../assets/images/products-pg/farmer.jpg);
+.pg__product__links__farmer a.btn, .pg__product__links__customer a.btn {
+  border: 2px solid black;
+  background-color: inherit;
+  color: #000;
 }
 
-.pg__product__links__customer .bg .center, .pg__product__links__farmer .bg .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  top: 70%;
-  width: 100%;
+.pg__product__links .bg--customer,
+.pg__product__links .bg--farmer {
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+}
+
+.pg__product__links__customer {
+  background-color: #ff9f1a;
+}
+
+.pg__product__links__customer .bg--customer {
+  background-image: url(../assets/svg/cart.svg);
+}
+
+.pg__product__links__farmer {
+  background-color: mediumseagreen;
+}
+
+.pg__product__links__farmer .bg--farmer {
+  background-image: url(../assets/svg/farmer-bg.svg);
 }
 /*# sourceMappingURL=main.css.map */
