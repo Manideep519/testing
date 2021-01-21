@@ -38,5 +38,4 @@ window.onscroll = function () {
 
 window.onresize = function () {
   responsiveNav();
-  resizeMenuFix();
 };
