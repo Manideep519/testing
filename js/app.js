@@ -13,9 +13,18 @@ let sticky = nav.offsetTop;
 menu.addEventListener("click", function () {
   list.classList.toggle("active");
   nav.classList.toggle("active");
+  menu.classList.toggle("opened");
 });
 
-function myFunction() {
+function responsiveNav() {
+  if (window.screen.width > 768) {
+    list.classList.remove("active");
+    nav.classList.remove("active");
+    menu.classList.remove("opened");
+  }
+}
+
+function stickyNav() {
   if (window.pageYOffset > sticky) {
     navbar.classList.add("sticky");
   } else {
@@ -24,5 +33,10 @@ function myFunction() {
 }
 
 window.onscroll = function () {
-  myFunction();
+  stickyNav();
+};
+
+window.onresize = function () {
+  responsiveNav();
+  resizeMenuFix();
 };

@@ -26,11 +26,11 @@
                 <ul class="list" id="list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="products.html">But / Sell</a></li>
+                    <li><a href="products.html">Buy / Sell</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="contact.html" style="color: #c9d935 ; font-weight: 900;">Contact</a></li>
                 </ul>
-                
+
                 <button class="menu" id="menu"
                     onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
                     aria-label="Main Menu">
@@ -62,33 +62,40 @@
             </p>
 
             <form class="form" action="" method="POST">
-                <div class="input__wrapper">
-                    <label for="name">Name</label>
-                    <input id="name" placeholder="Enter your name" type="text">
+                <div class="form__group">
+                    <div class="input__wrapper">
+                        <label for="name">Name</label>
+                        <input id="name" placeholder="Enter your name" type="text">
+                    </div>
+                    <div class="input__wrapper">
+                        <label for="email">Email</label>
+                        <input id="email" placeholder="Enter your email" type="mail">
+                    </div>
                 </div>
-                <div class="input__wrapper">
-                    <label for="email">Email</label>
-                    <input id="email" placeholder="Enter your email" type="mail">
+                <div class="form__group">
+                    <div class="input__wrapper">
+                        <label for="phone">Phone</label>
+                        <input id="phone" placeholder="Enter your number" type="mumber">
+                    </div>
+                    <div class="input__wrapper">
+                        <label for="subject">Subject</label>
+                        <select name="subject" id="subject">
+                            <option value="general">General</option>
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="input__wrapper">
-                    <label for="phone">Phone</label>
-                    <input id="phone" placeholder="Enter your number" type="mumber">
-                </div>
-                <div class="input__wrapper">
-                    <label for="subject">Subject</label>
-                    <select name="subject" id="subject">
-                        <option value="general">General</option>
-                        <option value="buy">Buy</option>
-                        <option value="sell">Sell</option>
-                    </select>
-                </div>
-                <div class="input__wrapper">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" placeholder="Enter your message" id="" cols="30"
-                        rows="10"></textarea>
+                <div class="form__group">
+                    <div class="input__wrapper">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Enter your message" id="" cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="input__wrapper"></div>
                 </div>
                 <div></div>
-                <a style="width: fit-content;" class="btn btn--rev" href="#">Send Us</a>
+                <a class="btn btn--rev" href="#">Submit</a>
             </form>
 
 

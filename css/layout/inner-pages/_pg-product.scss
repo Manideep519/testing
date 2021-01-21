@@ -21,15 +21,19 @@
 
     & > div {
       flex: 1 1 0;
-      margin: 20px;
-      min-height: 500px;
+      margin: 10px;
+      padding: 30px auto;
+
+      @include media(400px) {
+        margin: 20px;
+      }
     }
 
     &__farmer,
     &__customer {
       position: relative;
       border-radius: 6px;
-      padding: 20px;
+      padding: 40px;
 
       .title {
         color: $black;
@@ -45,11 +49,16 @@
 
     .bg--customer,
     .bg--farmer {
-      height: 300px;
-      width: 300px;
+      height: 150px;
+      width: 150px;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: top left;
+
+      @include media(400px) {
+        height: 300px;
+        width: 300px;
+      }
     }
 
     &__customer {
@@ -64,7 +73,7 @@
       background-color: mediumseagreen;
 
       & .bg--farmer {
-        background-image: url(../assets/svg/farmer-bg.svg);
+        background-image: url(../assets/svg/farmer.svg);
       }
     }
   }

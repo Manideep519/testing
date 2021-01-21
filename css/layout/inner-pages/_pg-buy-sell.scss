@@ -1,0 +1,70 @@
+.pg__buy-sell {
+  padding: 50px 0;
+  .buy-banner {
+    border-radius: 6px;
+    padding: 30px;
+
+    .arrow-back {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        color: $black;
+        border: 2px solid $black;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      span {
+        color: $black;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    .flex-wrapper {
+      display: flex;
+
+      flex-direction: column;
+
+      @include media(700px) {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &__image {
+      margin-right: 40px;
+      svg {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    &__info {
+      .text {
+        color: $black;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .buy-wrapper {
+    margin: 50px 0;
+
+    .buy__heading {
+      text-align: center;
+      .heading {
+        margin-bottom: 10px;
+      }
+
+      .text {
+        font-size: 17px;
+        font-weight: bold;
+        color: $black;
+      }
+    }
+  }
+}
