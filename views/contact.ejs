@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Contact | Stopla
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Red+Hat+Display&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/libraries/aos.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <section class="pg__contact">
+        <% if (helpers.response) { %>
+            <div class="flash__container <%= " flash__container--"+helpers.type %>
+                <%= helpers.showFlashAlert %>" id="flash">
+                    <div class="message">
+                        <%= helpers.flashMessage %>
+                    </div>
+                    <button class="close" id="flash-close" onclick="closeFlash()">&#215;</button>
+            </div>
+            <% } %>
+
+                <div class="sending__overlay <%= helpers.removeLoadingScreen %> " id="overlay">
+                    <div class="bars-container">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+
+                <div class="nav-container" id="navbar" style="padding: 0;">
+                    <nav id="nav">
+                        <a href="/" class="logoName">STOPLA</a>
+                        <ul class="list" id="list">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/products">Buy / Sell</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li style=" display: inherit;visibility: visible;opacity: 1;"><a href="/contact"
+                                    style="color: #c9d935 ; font-weight: 900;">Contact</a>
+                            </li>
+                        </ul>
+
+                        <button class="menu" id="menu"
+                            onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+                            aria-label="Main Menu">
+                            <svg width="50" height="50" viewBox="0 0 100 100">
+                                <path class="line line1"
+                                    d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                                <path class="line line2" d="M 20,50 H 80" />
+                                <path class="line line3"
+                                    d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                            </svg>
+                        </button>
+                    </nav>
+                </div>
+                <hr>
+    </section>
+
+    <section class="pg__contact__info">
+        <div class="container">
+            <h2 class="heading">
+                Get in touch with us
+            </h2>
+            <p class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam repudiandae magni earum
+                labore! Labore eius rem at sunt eligendi earum maiores eveniet, atque nihil veritatis minus officia
+                maxime, quisquam error!</p>
+
+            <form action="/contact" method="POST" class="form" id="form" name="contactForm" x-data="contactForm()"
+                @submit="submit" onsubmit="sendingAnimation()">
+                <div class="form__group">
+                    <div class="input__wrapper">
+                        <label for="name">Name </label>
+
+                        <input id="name" required="required" placeholder="Enter your name" type="text" name="name"
+                            x-bind:class="{'invalid':name.errorMessage}" data-rules='["required","minimum:1"]'
+                            @blur="blur" @input="input" required>
+                        <span class="errors error-message" x-show.transition.in="name.errorMessage"
+                            x-show="name.errorMessage && name.blurred" x-text="name.errorMessage"></span>
+                    </div>
+                    <div class="input__wrapper">
+                        <label for="email">Email</label>
+
+                        <input id="email" placeholder="Enter your email" value="" type="mail" name="mail"
+                            x-bind:class="{'invalid':mail.errorMessage && mail.blurred}"
+                            data-rules='["required","email"]' @blur="blur" @input="input" required>
+                        <span class="errors error-message" x-show.transition.in="mail.errorMessage"
+                            x-show="mail.errorMessage && mail.blurred" x-text="mail.errorMessage">
+                        </span>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="input__wrapper">
+                        <label for="phone">Phone</label>
+
+                        <input id="phone" placeholder="Enter your number" value="" type="tel" name="number"
+                            x-bind:class="{'invalid':number.errorMessage && number.blurred}"
+                            data-rules='["required","numeric","minimum:10"]' @blur="blur" @input="input" required>
+                        <span class="errors error-message" x-show.transition.in="number.errorMessage"
+                            x-show="number.errorMessage && number.blurred" x-text="number.errorMessage"></span>
+                    </div>
+                    <div class="input__wrapper">
+                        <label for="subject">Subject</label>
+                        <select name="subject" id="subject">
+                            <option value="general">General</option>
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="input__wrapper">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Enter your message" id="" cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="input__wrapper"></div>
+                </div>
+                <div></div>
+                <button class="btn btn--rev" type="submit">Submit</button>
+            </form>
+
+
+        </div>
+    </section>
+    <hr>
+
+
+    <div>
+        <section id="contact" class="container">
+            <div class="contact">
+                <div class="contact__address" data-aos="fade-up" data-aos-duration="600">
+                    <p class="title">
+                        <ion-icon name="newspaper-outline"></ion-icon> Address
+                    </p>
+                    <p class="contact__bold">C2 NFC Nagar <br> Ghatkesar Hyderabad</p>
+                </div>
+                <div class="contact__tel" data-aos="fade-up" data-aos-duration="700">
+                    <p class="title">
+                        <ion-icon name="mail-outline"></ion-icon> Email
+                    </p>
+                    <a class="contact__bold" href="mailto:emai@mail.com">emai@mail.com</a><br>
+                    <a class="contact__bold" href="mailto:emai@mail.com">emai@mail.com</a>
+                </div>
+                <div class="contact__mail" data-aos="fade-up" data-aos-duration="800">
+                    <p class="title">
+                        <ion-icon name="call-outline"></ion-icon> Phone
+                    </p>
+                    <a class="contact__bold" href="tel:+91 99343 34379">+91 99343 34379</a><br>
+                    <a class="contact__bold" href="tel:+91 99343 34379">+91 99343 34379</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <hr>
+    <footer>
+        <div class="container footer">
+            <div class="footer__logo" data-aos="fade-up" data-aos-duration="900">
+                <h2 class="text text--big">STOPLA</h2>
+                <p class="text">Copyright 2020 &copy; SPATLA</p>
+            </div>
+            <div class="footer__social" data-aos="fade-up" data-aos-duration="1000">
+                <p class="text">Follow us on</p>
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-twitter"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+            <div class="footer__links" data-aos="fade-up" data-aos-duration="1100">
+                <p class="text">Quick Links</p>
+                <ul>
+                    <li>Home</li>
+                    <li>Buy</li>
+                    <li>Sell</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/mattkingshott/iodine@3/dist/iodine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/formValidation.js"></script>
+
+</body>
+
+</html>

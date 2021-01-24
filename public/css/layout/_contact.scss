@@ -2,12 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 100px 0;
+  padding: 50px 0;
   flex-direction: column;
 
-  @include respond(sm) {
+  @include media(800px) {
     flex-direction: row;
     align-items: center;
+    padding: 100px 0;
   }
 
   &__bold {
@@ -16,14 +17,14 @@
     color: $black;
   }
 
-  & > div {
+  & > div:not(:last-child) {
     margin-bottom: 30px;
 
     & .title {
       color: $grey;
     }
 
-    @include respond(sm) {
+    @include media(800px) {
       margin-bottom: 0;
     }
   }
